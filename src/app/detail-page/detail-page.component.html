@@ -1,0 +1,14 @@
+<div *ngIf="book">
+   
+   <h2>{{book.title | uppercase}}</h2>
+   <div class="inputField">
+      <div><span>id:</span>{{book.id}}</div>
+      <div>
+         <label>name:
+            <input [(ngModel)]="book.name" placeholder="name">
+         </label>
+      </div>
+   </div>
+   
+</div>
+<button class="button" (click)="navigateHome()">Home</button>

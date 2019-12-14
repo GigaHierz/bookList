@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Book } from '../datatypes/Book'
-import { Books } from '../mock-books'
+import { BooksService } from '../books.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-list-page',
@@ -9,25 +11,20 @@ import { Books } from '../mock-books'
 })
 export class ListPageComponent implements OnInit {
 
-  public books = Books;
-  public book: Book = {
-    "title": "The Lord of the Rings",
-    "author": "J. R. R. Tolkien",
-    "coverImageUrl": "https://images-na.ssl-images-amazon.com/images/I/51r6XIPWmoL._SX331_BO1,204,203,200_.jpg",
-    "id": "618645616",
-    "pageCount": 1178,
-    "publisher": "Houghton Mifflin Harcourt",
-    "synopsis": "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the hobbit Bilbo Baggins."
-  }
-  public selectedBook: Book;
+  public books : Book[];
+  public book: Book;
 
-  constructor() { }
+  constructor(@Inject(Router) private router: Router, @Inject(BooksService) public booksService: BooksService) { }
 
   ngOnInit() {
+    /** subscribes to the books observable in the booksService */
+    this.booksService.getBooks().subscribe(books => this.books = books)
   }
 
+
   onSelect(book: Book): void {
-    this.selectedBook = book;
+    this.book = book;
+    this.router.navigate([`/detail-page/${book.id}`])
   }
 
 }

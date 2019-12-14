@@ -1,35 +1,9 @@
 <h1>This is a Page that Shows a List of Books</h1>
-<div class="inputField">
-   <label>title:
-     <input [(ngModel)]="book.title" placeholder="title"/>
-   </label>
- </div>
- <div class="inputField">
-    <label>author:
-      <input [(ngModel)]="book.author" placeholder="author">
-    </label>
- </div>
- <div class="inputField">
-    <label>id: 
-      <input [(ngModel)]="book.id" placeholder="id">
-    </label>
- </div>
  
  <h2>Books</h2>
  <ul>
-    <li *ngFor="let book of books" [class.selected]="book === selectedBook" (click)="onSelect(book)">
+    <li *ngFor="let book of books" (click)="onSelect(book)">
        <span class=books>Title : {{book.title}}, Author: {{book.author}}, Id: {{book.id}}</span>
     </li>
  </ul>
-
- <div *ngIf="selectedBook">
-   
-    <h2>{{selectedBook.title | uppercase}}</h2>
-    <div><span>id:</span>{{selectedBook.id}}</div>
-    <div>
-       <label>name:
-          <input [(ngModel)]="selectedBook.name" placeholder="name">
-       </label>
-    </div>
- </div>
 
