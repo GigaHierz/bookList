@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+   --headerColor: rgb(199, 156, 197);
+}
+
+body {
+   font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+   color: var(--headerColor);
+}
+
+h2 {
+   color: var(--headerColor);
+}
+
+ul {
+   list-style: none;
+}
+
+li {
+   margin: 1em;
+}
+
+.inputField {
+   margin: 1em;
+}
+
+.books {
+   cursor: pointer;
+}
+
+.selected {
+   font-weight: 600;
+}

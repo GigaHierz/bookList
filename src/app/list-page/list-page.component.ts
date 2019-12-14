@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Book } from '../datatypes/Book'
+import { Books } from '../mock-books'
 
 @Component({
   selector: 'app-list-page',
@@ -9,6 +9,7 @@ import { Book } from '../datatypes/Book'
 })
 export class ListPageComponent implements OnInit {
 
+  public books = Books;
   public book: Book = {
     "title": "The Lord of the Rings",
     "author": "J. R. R. Tolkien",
@@ -18,10 +19,15 @@ export class ListPageComponent implements OnInit {
     "publisher": "Houghton Mifflin Harcourt",
     "synopsis": "In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell by chance into the hands of the hobbit Bilbo Baggins."
   }
+  public selectedBook: Book;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(book: Book): void {
+    this.selectedBook = book;
   }
 
 }
