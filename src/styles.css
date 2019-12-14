@@ -27,21 +27,34 @@ li {
    margin: 1em;
 }
 
-.inputField {
-   margin: 3em;
+button {
+   margin: 2em;
+   background-color: var(--buttonColor);
+   min-width: 10em;
+   border-radius: 4px;
+   height: 3em;
+   border-radius: 5px;
+   box-sizing: border-box;
 }
 
-.inputField div {
-   margin-top: 2em;
+textarea {
+   font-size: 1rem;
+   font-family: inherit;
+   border: none;
+   width: 100%;
+   padding: 0.9em 1.5em;
+}
+
+.inputField {
+   margin: 3em;
 }
 
 .books {
    cursor: pointer;
 }
 
-button {
-   margin: 2em;
-   background-color: var(--buttonColor);
-   min-width: 10em;
-   border-radius: 4px;
+.flex {
+   display: flex;
+   width: 70%;
+
 }

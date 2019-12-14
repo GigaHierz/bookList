@@ -1,14 +1,53 @@
-<div *ngIf="book">
+<div *ngIf="book" class="flex">
    
-   <h2>{{book.title | uppercase}}</h2>
+   <div>
+      <h2>{{book.title}}</h2>
+      <img src="{{book.coverImageUrl}}" alt="book cover">
+   </div>
    <div class="inputField">
-      <div><span>id:</span>{{book.id}}</div>
       <div>
-         <label>name:
-            <input [(ngModel)]="book.name" placeholder="name">
+         <label>title:
+            <textarea [(ngModel)]="book.name" placeholder="{{book.title}}"></textarea>
          </label>
       </div>
+
+      <div>
+         <label>author:
+            <textarea [(ngModel)]="book.author" placeholder="{{book.author}}"></textarea>
+         </label>
+      </div>
+
+      <div>
+         <label>coverImageUrl:
+            <textarea [(ngModel)]="book.coverImageUrl" placeholder="{{book.coverImageUrl}}"></textarea>
+         </label>
+      </div>
+
+      <div>
+         <label>id:
+            <textarea [(ngModel)]="book.id" placeholder="{{book.id}}"></textarea>
+         </label>
+      </div>
+
+      <div>
+         <label>pageCount:
+            <textarea [(ngModel)]="book.pageCount" placeholder="{{book.pageCount}}"></textarea>
+         </label>
+      </div>
+
+      <div>
+         <label>publisher:
+            <textarea [(ngModel)]="book.publisher" placeholder="{{book.publisher}}"></textarea>
+         </label>
+      </div>
+
+      <div>
+         <label>synopsis:
+            <textarea [(ngModel)]="book.synopsis" placeholder="{{book.synopsis}}"></textarea>
+         </label>
+      </div>
+
+      <button class="button" (click)="save()">Save</button>
+      <button class="button" (click)="navigateHome()">Home</button>
    </div>
-   
 </div>
-<button class="button" (click)="navigateHome()">Home</button>

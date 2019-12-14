@@ -16,12 +16,17 @@ export class DetailPageComponent implements OnInit {
     @Inject(ActivatedRoute) public route: ActivatedRoute, 
     @Inject(BooksService) public booksService: BooksService,
     @Inject(Router) private router: Router,) { 
-    const id =+ this.route.snapshot.paramMap.get('id');
-    this.booksService.getBook(id)
+    const id =+ (this.route.snapshot.paramMap.get('id'));
+    this.booksService.getBook(id.toString())
       .subscribe(book => this.book = book);
   }
 
   ngOnInit() {
+  }
+
+  save(): void {
+    this.booksService.updateBook(this.book)
+      .subscribe(() => this.navigateHome());
   }
 
   navigateHome() :void {
