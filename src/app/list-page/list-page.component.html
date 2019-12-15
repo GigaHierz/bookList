@@ -1,10 +1,13 @@
 <h1>This is a Page that Shows a List of Books</h1>
 
+<!-- Book Search returns a List of Books that match the searchTerm -->
 <app-book-search></app-book-search>
  
+<!-- Shows a list of 25 Books that will be appearing in a random shuffled order -->
 <h2>List of Books - - Reload to see more</h2>
 <ul>
    <li *ngFor="let book of books" (click)="onSelect(book)">
+      <!-- only shows Information about title, author, id, more information in the detailPage -->
       <span class=books>Title : {{book.title}}, Author: {{book.author}}, Id: {{book.id}}</span>
    </li>
 </ul>

@@ -1,9 +1,16 @@
+<!-- 
+   If book can be found, it will be shown in detail on this page
+   - [ ] TODO: Errormesssage, because doesn't show anything, when Id contains a letter
+-->
 <div *ngIf="book" class="flex">
    
+   <!-- Booktitle and BookImage are shown on the left side of the page-->
    <div>
       <h2>{{book.title}}</h2>
       <img src="{{book.coverImageUrl}}" alt="book cover">
    </div>
+
+   <!--  All Textfields with Details, tht can be edited are shown on the right sied of the page -->
    <div class="inputField">
       <div>
          <label>title:
@@ -47,7 +54,9 @@
          </label>
       </div>
 
+      <!-- Button Saves the changes and navigates Home -->
       <button class="button" (click)="save()">Save</button>
+      <!-- Button navigates Home -->
       <button class="button" (click)="navigateHome()">Home</button>
    </div>
 </div>

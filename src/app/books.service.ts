@@ -11,10 +11,13 @@ export class BooksService {
 
   constructor( private http: HttpClient) { }
 
+  // URL where backend can be reached
   private booksUrl = 'http://localhost:3000/books';
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'books/json' })
+    // needed for the updateBook, didn't understand yet what for exactly. 
+    // TODO: research, and improve
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   /* GET all Books */
@@ -26,18 +29,26 @@ export class BooksService {
       );
   }
 
-  /* GET Book by id */
+  /**
+   *   GET Book by id 
+   *  - [ ] doesn't work when Id contains a letter, e.g. The Kite Runner Id: 159463193X
+   */
   getBook(id: string): Observable<Book> {
     const url = `${this.booksUrl}/${id}`;
+
     return this.http.get<Book>(url).pipe(
       tap(_ => console.log(`fetched book id=${id}`)),
       catchError(this.handleError<Book>(`getBook id=${id}`))
     );
   }
 
-  /** PUT: update the book on the server */
+  /** PUT: update the book on the server 
+   * - throws Error : "Unexpected token o in JSON at position 1"
+   * - TODO make it work, maybe something with the header?
+  */
   updateBook (book: Book): Observable<any> {
     const url = `${this.booksUrl}/${book.id}`;
+
     return this.http.put(url, book, this.httpOptions).pipe(
       tap(_ => console.log(`updated book id=${book.id}`)),
       catchError(this.handleError<any>('updateBook'))

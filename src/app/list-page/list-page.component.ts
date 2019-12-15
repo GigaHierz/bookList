@@ -21,7 +21,10 @@ export class ListPageComponent implements OnInit {
     this.booksService.getBooks().subscribe(books => this.books = books)
   }
 
-
+  /**
+   * Function navigates to the selected Book, when clicked
+   * @param book the book, that is chosen by the user
+   */
   onSelect(book: Book): void {
     this.book = book;
     this.router.navigate([`/detail-page/${book.id}`])

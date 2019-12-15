@@ -25,6 +25,17 @@ describe('DetailPageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DetailPageComponent);
     component = fixture.componentInstance;
+
+    component.book = {
+      "title": "Harry Potter and the Deathly Hallows",
+      "author": "J. K. Rowling",
+      "coverImageUrl": "https://images-na.ssl-images-amazon.com/images/I/5128ATd9dSL._SX418_BO1,204,203,200_.jpg",
+      "id": "545139708",
+      "pageCount": 784,
+      "publisher": "Scholastic",
+      "synopsis": "A spectacular finish to a phenomenal series, Harry Potter and the Deathly Hallows is a bittersweet read for fans. The journey is hard, filled with events both tragic and triumphant, the battlefield littered with the bodies of the dearest and despised, but the final chapter is as brilliant and blinding as a phoenix's flame, and fans and skeptics alike will emerge from the confines of the story with full but heavy hearts, giddy and grateful for the experience."
+    }
+
     fixture.detectChanges();
   });
 

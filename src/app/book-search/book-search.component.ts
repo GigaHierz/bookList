@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { Book } from '../datatypes/Book';
 import { BooksService } from '../books.service';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-book-search',
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class BookSearchComponent implements OnInit {
 
-  books$: Observable<Book[]>;
+  books$: Observable<Book[]>; 
   private searchTerms = new Subject<string>();
 
   constructor(private booksService: BooksService) {}
