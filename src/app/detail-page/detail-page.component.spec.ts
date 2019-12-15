@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { DetailPageComponent } from './detail-page.component';
 import { BooksService } from '../books.service';
 import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DetailPageComponent', () => {
   let component: DetailPageComponent;
@@ -16,7 +17,7 @@ describe('DetailPageComponent', () => {
           provide: BooksService, Router, ActivatedRoute
         }
       ],
-      imports: [FormsModule]
+      imports: [FormsModule, RouterTestingModule]
     })
     .compileComponents();
   }));

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { BookSearchComponent } from './book-search/book-search.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { BookSearchComponent } from './book-search/book-search.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
