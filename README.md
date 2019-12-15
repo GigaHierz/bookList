@@ -1,5 +1,28 @@
 # BookList
 
+This Project was done for the application process at SpreadShirt. 
+Only dependency tests work.
+
+Function updateBook() doesnt work, for more detail see comments in booksService.
+
+Function getBook() dosen't work with The Kite Runner, because there is a letter in the id.
+
+Added `const cors = require('cors')`  and `app.use(cors())` into server.js of backend.
+
+```javascrip
+const app = require('express')();
+const morgan = require('morgan');
+const matchSorter = require('match-sorter').default;
+const cors = require('cors')
+
+const books = require('./books');
+
+const shuffle = list => [...list].sort(() => Math.random() - 0.5);
+
+app.use(morgan('tiny'));
+app.use(cors()) 
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
 
 ## Development server
