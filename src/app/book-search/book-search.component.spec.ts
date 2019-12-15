@@ -1,24 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ListPageComponent } from './list-page.component';
-import { BookSearchComponent } from '../book-search/book-search.component';
-import { BooksService } from '../books.service';
 import { Router, RouterModule } from "@angular/router";
+import { BookSearchComponent } from './book-search.component';
+import { BooksService } from '../books.service';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
-
-describe('ListPageComponent', () => {
-  let component: ListPageComponent;
-  let fixture: ComponentFixture<ListPageComponent>;
+describe('BookSearchComponent', () => {
+  let component: BookSearchComponent;
+  let fixture: ComponentFixture<BookSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListPageComponent , BookSearchComponent],
+      declarations: [ BookSearchComponent ],
       providers: [
         {
           provide: BooksService, Router
-        },
+        }
       ],
       imports: [FormsModule, RouterModule, RouterTestingModule],
     })
@@ -26,7 +23,7 @@ describe('ListPageComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListPageComponent);
+    fixture = TestBed.createComponent(BookSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,15 +6,16 @@ import { AppComponent } from './app.component';
 import { ListPageComponent } from './list-page/list-page.component';
 import { FormsModule } from '@angular/forms';
 import { DetailPageComponent } from './detail-page/detail-page.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { BookSearchComponent } from './book-search/book-search.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ListPageComponent,
     DetailPageComponent,
-    NavBarComponent
+    BookSearchComponent
   ],
   imports: [
     BrowserModule,

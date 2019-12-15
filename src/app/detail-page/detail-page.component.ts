@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from '../datatypes/Book'
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from '../books.service';
 
 @Component({
@@ -13,9 +13,9 @@ export class DetailPageComponent implements OnInit {
   public book: Book;
 
   constructor(
-    @Inject(ActivatedRoute) public route: ActivatedRoute, 
-    @Inject(BooksService) public booksService: BooksService,
-    @Inject(Router) private router: Router,) { 
+    public route: ActivatedRoute, 
+    public booksService: BooksService,
+    private router: Router) { 
     const id =+ (this.route.snapshot.paramMap.get('id'));
     this.booksService.getBook(id.toString())
       .subscribe(book => this.book = book);

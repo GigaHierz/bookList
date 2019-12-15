@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styling  */
 :root {
    --headerColor: rgb(199, 156, 197);
    --buttonColor:  rgb(163, 212, 235);
@@ -37,12 +37,13 @@ button {
    box-sizing: border-box;
 }
 
-textarea {
+label input {
    font-size: 1rem;
    font-family: inherit;
    border: none;
    width: 100%;
    padding: 0.9em 1.5em;
+   box-sizing: content-box;
 }
 
 .inputField {

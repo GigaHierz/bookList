@@ -14,7 +14,7 @@ export class ListPageComponent implements OnInit {
   public books : Book[];
   public book: Book;
 
-  constructor(@Inject(Router) private router: Router, @Inject(BooksService) public booksService: BooksService) { }
+  constructor(private router: Router, public booksService: BooksService) { }
 
   ngOnInit() {
     /** subscribes to the books observable in the booksService */
